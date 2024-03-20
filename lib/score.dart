@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:quize_app/signin.dart';
+import 'package:quize_app/homePage.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Score extends StatelessWidget {
+  const Score({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,68 +11,66 @@ class HomePage extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Container(
           decoration: const BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: AssetImage('assest/images/bg.png'),
-            ),
+      
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Image(
-                image: AssetImage('assest/images/logo-quize.png'),
+                image: AssetImage('assest/images/congouration.png'),
                 width: 310,
                 height: 300,
               ),
               const Text(
-                'Its Quiz App',
+                'Congratulations',
                 style: TextStyle(
+                  color: Colors.black,
                   fontFamily: 'GentiumBookPlus',
-                  color: Colors.white70,
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                ),
+                  fontSize: 40,
+                  fontWeight: FontWeight.normal,
+                               ),
               ),
+    
               const Text(
-                "We Are Creative, enjoy our App",
+                "9/10",
                 style: TextStyle(
                   fontFamily: 'GentiumBookPlus',
-                  fontSize: 30,
-                  color: Colors.white,
-
+                    fontSize: 35,
+                    
+                  color: Colors.black,
+                  
+                
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
+                height: MediaQuery.of(context).size.height / 15,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width / 1.4,
+                width: MediaQuery.of(context).size.width / 1.1,
                 child: ElevatedButton(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(30),
+                      borderRadius: BorderRadius.all(
+                      Radius.circular(30),
                         ),
                       ),
                     ),
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.yellow[700]),
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow[700]),
                   ),
                   child: const Text(
-                    'Start',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 228, 228, 228),
-                      fontFamily: 'GentiumBookPlus',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                    ),
+                    'Go To Agin Play',
+                    
+                    style: TextStyle(color: Colors.black ,
+                    fontFamily: 'GentiumBookPlus',
+                     fontSize: 24,),
                   ),
                   onPressed: () {
-                    Navigator.push(
+
+                      Navigator.push(
                         context,
                         MaterialPageRoute<void>(
-                          builder: (context) => const Signin(),
+                          builder: (context) => const HomePage(),
                         ));
                   },
                 ),
