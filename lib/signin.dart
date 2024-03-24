@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quize_app/catgouries.dart';
+import 'package:quize_app/username.dart';
 
 class Signin extends StatefulWidget {
   const Signin({Key? key});
+
+    
 
   @override
   _SigninState createState() => _SigninState();
@@ -71,7 +74,7 @@ class _SigninState extends State<Signin> {
                     height: 90,
                     child: Center(
                       child: TextFormField(
-                        controller: _usernameController,
+                        controller: userName,
                         decoration: InputDecoration(
                           labelText: "UserName",
                           enabledBorder: OutlineInputBorder(

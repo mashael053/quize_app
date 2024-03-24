@@ -1,8 +1,9 @@
 // Question for section one "Programming Quize" //
 
+import 'package:flutter/material.dart';
+
 List programmingQuizQuestionsAndAnswers = [
   {
-    
     "ques": "What does HTML stand for?",
     "answers": [
       "Hyperlinks and Text Markup Language",
@@ -79,40 +80,44 @@ List mathematicsQuizQuestionsAndAnswers = [
   },
   {
     "ques": "What is the square root of 64?",
-    "answers": ["8", "-8"]
+    "answers": ["8", "-8", "0", "5"]
   },
   {
     "ques": "Simplify the expression: 3 + 4 * 2",
-    "answers": ["11", "14"]
+    "answers": ["11", "14", "5", "10"]
   },
   {
     "ques": "What is the value of 2^3?",
-    "answers": ["8"]
+    "answers": ["8", "7", "3", "4"]
   },
   {
     "ques": "What is the result of (4 + 5) * 2?",
-    "answers": ["18", "18.0", "18.00"]
+    "answers": ["18", "18.0", "18.00", "18.8"]
   },
   {
     "ques":
         "What is the next number in the Fibonacci sequence: 1, 1, 2, 3, 5, __",
-    "answers": ["8"]
+    "answers": ["8", "8", "5", "4"]
   },
   {
     "ques": "What is the area of a square with side length 5?",
-    "answers": ["25"]
+    "answers": ["25", "35", "45", "55"]
   },
   {
     "ques": "Solve the equation: 2x + 5 = 15",
-    "answers": ["5"]
+    "answers": ["5", "4", "3", "2"]
   },
   {
     "ques": "What is the result of 10 divided by 2?",
-    "answers": ["5", "5.0", "5.00"]
+    "answers": [
+      "5",
+      "5.0",
+      "5.00",
+    ]
   },
   {
     "ques": "What is the sum of the angles in a triangle?",
-    "answers": ["180 degrees", "180°"]
+    "answers": ["180 degrees", "180°", "160", "180.180"]
   }
 ];
 
@@ -161,3 +166,9 @@ List physicsQuizQuestionsAndAnswers = [
   }
 ];
 
+List colorsAnswares = [
+  Color(0xFF01B6C9),
+  Color(0xFFFEB802),
+  Color.fromARGB(144, 203, 202, 199),
+  Color(0xFF51829B),
+];

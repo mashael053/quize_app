@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quize_app/homePage.dart';
+import 'package:quize_app/username.dart';
 
 class Score extends StatelessWidget {
   const Score({super.key});
@@ -21,21 +22,36 @@ class Score extends StatelessWidget {
                 width: 310,
                 height: 300,
               ),
-              const Text(
-                'Congratulations',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontFamily: 'GentiumBookPlus',
-                  fontSize: 40,
-                  fontWeight: FontWeight.normal,
-                               ),
+//         const Text(
+//   "Congratulations",
+//   style: TextStyle(
+//     color: Colors.black,
+//     fontFamily: 'GentiumBookPlus',
+//     fontSize: 40,
+//     fontWeight: FontWeight.normal,
+//   ),  
+// ),
+  RichText(
+                text:
+                    TextSpan(style: TextStyle(color: Colors.black ,fontFamily: 'GentiumBookPlus' ,  fontSize: 30 ), children: [
+              const TextSpan(
+                text: "Congratulations ",
               ),
+              TextSpan(
+                  text: userName.text,
+                  style: const TextStyle(
+                      color: Color(0xFF51829B),
+                      fontFamily: 'GentiumBookPlus',
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold)),
+            ])),
+
     
               const Text(
                 "9/10",
                 style: TextStyle(
                   fontFamily: 'GentiumBookPlus',
-                    fontSize: 35,
+                    fontSize: 40,
                     
                   color: Colors.black,
                   

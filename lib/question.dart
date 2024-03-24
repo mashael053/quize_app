@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:quize_app/quesion_ans_quizeapp.dart';
 import 'package:quize_app/score.dart';
 
-class Question extends StatelessWidget {
+class Question extends StatefulWidget {
   final List? questionAndAnswereList;
   
 Question({super.key, this.questionAndAnswereList});
 
+  @override
+  State<Question> createState() => _QuestionState();
+}
+
+class _QuestionState extends State<Question> {
   int _numberIndex = 0;
 
   @override
@@ -26,7 +32,7 @@ Question({super.key, this.questionAndAnswereList});
                 ),
               ),
               Text(
-                '1/ ${questionAndAnswereList!.length}',
+                '${_numberIndex +1} / ${widget.questionAndAnswereList!.length}',
                 style: TextStyle(
                   fontSize: 40,
                   color: Color(0xFF51829B),
@@ -35,134 +41,154 @@ Question({super.key, this.questionAndAnswereList});
                 ),
               ),
               Text(
-                questionAndAnswereList![0]["ques"],
+                widget.questionAndAnswereList![0]["ques"],
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                   fontFamily: 'GentiumBookPlus',
                 ),
               ),
+              // SizedBox(height: 16),
+              // InkWell(
+              //   onTap: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute<void>(
+              //         builder: (context) => const Score(),
+              //       ),
+              //     );
+              //   },
+              //   child: Container(       
+              //     padding: EdgeInsets.all(8),
+              //     child: SizedBox(
+              //       width: MediaQuery.of(context).size.width / 1.4,
+              //       child: ElevatedButton(
+              //         style: ButtonStyle(
+              //           shape: MaterialStateProperty.all(
+              //             RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.all(
+              //                 Radius.circular(30),
+              //               ),
+              //             ),
+              //           ),
+              //           backgroundColor: MaterialStateProperty.all(
+              //             Color(0xFFFEB802),
+              //           ),
+              //         ),
+              //         child: Text(widget.questionAndAnswereList![_numberIndex]["answers"] [0],
+              //           style: TextStyle(
+              //             color: Colors.white,
+              //             fontFamily: 'GentiumBookPlus',
+              //             fontWeight: FontWeight.normal,
+              //             fontSize: 20,
+              //           ),
+              //         ),
+              //         onPressed: () {},
+              //       ),
+              //     ),
+              //   ),
+              // ),
               SizedBox(height: 16),
-              InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute<void>(
-                      builder: (context) => const Score(),
-                    ),
-                  );
-                },
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 1.4,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(30),
-                            ),
+              for (int i = 0;
+                  i <
+                      widget.questionAndAnswereList![_numberIndex]["answers"].length;
+                  i++)
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 1.4,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(30),
                           ),
                         ),
-                        backgroundColor: MaterialStateProperty.all(
-                          Color(0xFFFEB802),
-                        ),
                       ),
-                      child: Text(questionAndAnswereList![_numberIndex]["answers"] [0],
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'GentiumBookPlus',
-                          fontWeight: FontWeight.normal,
-                          fontSize: 20,
-                        ),
+                      backgroundColor: MaterialStateProperty.all(
+                      colorsAnswares[i]
                       ),
-                      onPressed: () {},
                     ),
+                    child:Text(widget.questionAndAnswereList![_numberIndex]["answers"][i],
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'GentiumBookPlus',
+                        fontWeight: FontWeight.normal,
+                        fontSize: 20,
+                      ),
+                    ),
+                    onPressed: () {
+                        if ((_numberIndex + 1) <
+                          widget.questionAndAnswereList!.length) {
+                        setState(() {
+                          
+                          _numberIndex++;
+                        });
+                      } else {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const Score(),
+                          ),
+                        );
+                      }
+                    },
                   ),
                 ),
-              ),
-              SizedBox(height: 16),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 1.4,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(30),
-                        ),
-                      ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all(
-                      Color(0xFF01B6C9),
-                    ),
-                  ),
-                  child:Text(questionAndAnswereList![_numberIndex]["answers"][1],
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'GentiumBookPlus',
-                      fontWeight: FontWeight.normal,
-                      fontSize: 20,
-                    ),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              SizedBox(height: 16),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 1.4,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(30),
-                        ),
-                      ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(150, 213, 236, 248),
-                    ),
-                  ),
-                  child:Text(questionAndAnswereList![_numberIndex]["answers"] [2],
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'GentiumBookPlus',
-                      fontWeight: FontWeight.normal,
-                      fontSize: 20,
-                    ),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              SizedBox(height: 16),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 1.4,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(30),
-                        ),
-                      ),
-                    ),
-                    backgroundColor: MaterialStateProperty.all(
-                      Color(0xFF51829B),
-                    ),
-                  ),
-                  child: Text(questionAndAnswereList![_numberIndex]["answers"] [3],
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'GentiumBookPlus',
-                      fontWeight: FontWeight.normal,
-                      fontSize: 20,
-                    ),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
+              // SizedBox(height: 16),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.width / 1.4,
+              //   child: ElevatedButton(
+              //     style: ButtonStyle(
+              //       shape: MaterialStateProperty.all(
+              //         RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.all(
+              //             Radius.circular(30),
+              //           ),
+              //         ),
+              //       ),
+              //       backgroundColor: MaterialStateProperty.all(
+              //         Color.fromARGB(150, 213, 236, 248),
+              //       ),
+              //     ),
+              //     child:Text(widget.questionAndAnswereList![_numberIndex]["answers"] [2],
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //         fontFamily: 'GentiumBookPlus',
+              //         fontWeight: FontWeight.normal,
+              //         fontSize: 20,
+              //       ),
+              //     ),
+              //     onPressed: () {},
+              //   ),
+              // ),
+              // SizedBox(height: 16),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.width / 1.4,
+              //   child: ElevatedButton(
+              //     style: ButtonStyle(
+              //       shape: MaterialStateProperty.all(
+              //         RoundedRectangleBorder(
+              //           borderRadius: BorderRadius.all(
+              //             Radius.circular(30),
+              //           ),
+              //         ),
+              //       ),
+              //       backgroundColor: MaterialStateProperty.all(
+              //         Color(0xFF51829B),
+              //       ),
+              //     ),
+              //     child: Text(widget.questionAndAnswereList![_numberIndex]["answers"] [3],
+              //       style: TextStyle(
+              //         color: Colors.white,
+              //         fontFamily: 'GentiumBookPlus',
+              //         fontWeight: FontWeight.normal,
+              //         fontSize: 20,
+              //       ),
+              //     ),
+              //     onPressed: () {},
+              //   ),
+              // ),
             ],
           ),
         ),
