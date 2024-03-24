@@ -21,7 +21,7 @@ class Catgouries extends StatelessWidget {
         
             catgouriestypeQuize("Mathematics Quiz", Color(0xFF01B6C9), context , mathematicsQuizQuestionsAndAnswers ),
             catgouriestypeQuize(
-                "Physics Quiz", Color.fromARGB(149, 151, 149, 144), context ,physicsQuizQuestionsAndAnswers ),
+                "Biology Quiz", Color.fromARGB(149, 151, 149, 144), context ,biologyQuizQuestionsAndAnswers ),
           ],
         ),
       ),

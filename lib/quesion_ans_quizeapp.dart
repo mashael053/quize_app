@@ -76,7 +76,7 @@ List programmingQuizQuestionsAndAnswers = [
 List mathematicsQuizQuestionsAndAnswers = [
   {
     "ques": "What is the value of pi (π)?",
-    "answers": ["3.14159", "3.14", "22/7"]
+    "answers": ["3.14159", "3.14", "22/7", "4"]
   },
   {
     "ques": "What is the square root of 64?",
@@ -108,12 +108,8 @@ List mathematicsQuizQuestionsAndAnswers = [
     "answers": ["5", "4", "3", "2"]
   },
   {
-    "ques": "What is the result of 10 divided by 2?",
-    "answers": [
-      "5",
-      "5.0",
-      "5.00",
-    ]
+    "ques": "What is the result of 10 divided by 2 ?",
+    "answers": ["5", "5.0", "5.00", "5.55"]
   },
   {
     "ques": "What is the sum of the angles in a triangle?",
@@ -123,46 +119,67 @@ List mathematicsQuizQuestionsAndAnswers = [
 
 // // Question for section one "Physics Quiz" //
 
-List physicsQuizQuestionsAndAnswers = [
+List biologyQuizQuestionsAndAnswers = [
   {
-    "ques": "What is the SI unit of force?",
-    "answers": ["Newton", "N"]
+    "ques": "What is the basic unit of life?",
+    "answers": ["Cell", "DNA", "Protein", "Organ"]
   },
   {
-    "ques": "What is the formula to calculate velocity?",
-    "answers": ["Velocity = Distance / Time"]
+    "ques": "Which organelle is known as the 'powerhouse' of the cell?",
+    "answers": [
+      "Mitochondria",
+      "Nucleus",
+      "Endoplasmic reticulum",
+      "Golgi apparatus"
+    ]
   },
   {
-    "ques": "What is the unit of electric current?",
-    "answers": ["Ampere", "A"]
+    "ques": "What is the process by which plants convert sunlight into energy?",
+    "answers": [
+      "Photosynthesis",
+      "Respiration",
+      "Transpiration",
+      "Fermentation"
+    ]
   },
   {
-    "ques": "What is the formula to calculate work?",
-    "answers": ["Work = Force × Distance"]
+    "ques": "Which gas is primarily responsible for the greenhouse effect?",
+    "answers": ["Carbon dioxide", "Oxygen", "Nitrogen", "Methane"]
   },
   {
-    "ques": "What is the speed of light in a vacuum?",
-    "answers": ["299,792,458 meters per second", "3.00 × 10^8 m/s"]
+    "ques": "Which molecule stores genetic information in living organisms?",
+    "answers": ["DNA", "RNA", "Protein", "Lipid"]
   },
   {
-    "ques": "What is the SI unit of energy?",
-    "answers": ["Joule", "J"]
+    "ques": "Which human body system is responsible for pumping blood?",
+    "answers": [
+      "Circulatory system",
+      "Respiratory system",
+      "Digestive system",
+      "Nervous system"
+    ]
   },
   {
-    "ques": "What is the formula to calculate power?",
-    "answers": ["Power = Work / Time"]
+    "ques": "What is the largest organ in the human body?",
+    "answers": ["Skin", "Liver", "Heart", "Brain"]
   },
   {
-    "ques": "What is the unit of electric potential difference?",
-    "answers": ["Volt", "V"]
+    "ques":
+        "Which scientist is credited with discovering the structure of DNA?",
+    "answers": [
+      "James Watson and Francis Crick",
+      "Rosalind Franklin",
+      "Gregor Mendel",
+      "Albert Einstein"
+    ]
   },
   {
-    "ques": "What is the formula to calculate density?",
-    "answers": ["Density = Mass / Volume"]
+    "ques": "What is the process by which cells divide and replicate?",
+    "answers": ["Mitosis", "Meiosis", "Binary fission", "Budding"]
   },
   {
-    "ques": "What is the acceleration due to gravity on Earth?",
-    "answers": ["9.8 meters per second squared", "9.8 m/s^2"]
+    "ques": "Which gas is essential for respiration in humans?",
+    "answers": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"]
   }
 ];
 
