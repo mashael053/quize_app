@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quize_app/question.dart';
+import 'package:quize_app/quesion_ans_quizeapp.dart';
 
 class Catgouries extends StatelessWidget {
   const Catgouries({Key? key}) : super(key: key);
@@ -16,9 +17,11 @@ class Catgouries extends StatelessWidget {
         ),
         child: Column(
           children: [
-            catgouriestypeQuize("Programming Quiz", Color(0xFFFEB802) , context),
-            catgouriestypeQuize("Mathematics Quiz", Color(0xFF01B6C9) ,context ),
-            catgouriestypeQuize("Physics Quiz", Color.fromARGB(149, 151, 149, 144) , context),
+            catgouriestypeQuize("Programming Quiz", Color(0xFFFEB802), context , programmingQuizQuestionsAndAnswers ),
+        
+            catgouriestypeQuize("Mathematics Quiz", Color(0xFF01B6C9), context , mathematicsQuizQuestionsAndAnswers ),
+            catgouriestypeQuize(
+                "Physics Quiz", Color.fromARGB(149, 151, 149, 144), context ,physicsQuizQuestionsAndAnswers ),
           ],
         ),
       ),
@@ -26,32 +29,28 @@ class Catgouries extends StatelessWidget {
   }
 }
 
-Widget catgouriestypeQuize(String quizName, Color quizColor , context)  {
+Widget catgouriestypeQuize(String quizName, Color quizColor, context , List questionList) {
   return Center(
     child: Padding(
       padding: EdgeInsets.only(top: 60),
       child: InkWell(
-        onTap: () {    
-          Navigator.push(
-                        context,
-                        MaterialPageRoute<void>(
-                          builder: (context) => const Question(),
-                        ));
-          
+        onTap: () {
+            Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Question(questionAndAnswereList: questionList)
+                    ),
+          );
         },
         child: Container(
           margin: EdgeInsets.all(9),
           height: 200,
           width: 350,
           child: Center(
-            child: Text(
-              quizName,
-              style: TextStyle(
-                fontFamily: 'GentiumBookPlus',
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+                  child: Text(
+            quizName,
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
           ),
           color: quizColor,
         ),
