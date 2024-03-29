@@ -1,9 +1,114 @@
+// import 'package:flutter/material.dart';
+// import 'package:quize_app/homePage.dart';
+// import 'package:quize_app/username.dart';
+
+
+// class Score extends StatelessWidget {
+
+//     final score;
+//   final numberQuestions;
+
+//   const Score({super.key , required this.score, required this.numberQuestions});
+
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SizedBox(
+//         width: MediaQuery.of(context).size.width,
+//         child: Container(
+//           decoration: const BoxDecoration(
+      
+//           ),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               const Image(
+//                 image: AssetImage('assest/images/congouration.png'),
+//                 width: 310,
+//                 height: 300,
+//               ),
+
+//   RichText(
+//                 text:
+//                     TextSpan(style: TextStyle(color: Colors.black ,fontFamily: 'GentiumBookPlus' ,  fontSize: 30 ), children: [
+//               const TextSpan(
+//                 text: "Congratulations ",
+//               ),
+//               TextSpan(
+//                   text: userName.text,
+//                   style: const TextStyle(
+//                       color: Color(0xFF51829B),
+//                       fontFamily: 'GentiumBookPlus',
+//                       fontSize: 30,
+//                       fontWeight: FontWeight.bold)),
+//             ])),
+
+    
+//               const Text(
+                
+//               " $score/$numberQuestions",
+//                 style: TextStyle(
+//                   fontFamily: 'GentiumBookPlus',
+//                     fontSize: 40,
+                    
+//                   color: Colors.black,
+                  
+                
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: MediaQuery.of(context).size.height / 15,
+//               ),
+//               SizedBox(
+//                 width: MediaQuery.of(context).size.width / 1.1,
+//                 child: ElevatedButton(
+//                   style: ButtonStyle(
+//                     shape: MaterialStateProperty.all(
+//                       RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.all(
+//                       Radius.circular(30),
+//                         ),
+//                       ),
+//                     ),
+//                     backgroundColor: MaterialStateProperty.all(Colors.yellow[700]),
+//                   ),
+//                   child: const Text(
+//                     'Go To Agin Play',
+                    
+//                     style: TextStyle(color: Colors.black ,
+//                     fontFamily: 'GentiumBookPlus',
+//                      fontSize: 24,),
+//                   ),
+//                   onPressed: () {
+
+//                       Navigator.push(
+//                         context,
+//                         MaterialPageRoute<void>(
+//                           builder: (context) => const HomePage(),
+//                         ));
+//                   },
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
 import 'package:flutter/material.dart';
 import 'package:quize_app/homePage.dart';
 import 'package:quize_app/username.dart';
 
 class Score extends StatelessWidget {
-  const Score({super.key});
+  // final Key key;
+  final score;
+  final numberQuestions;
+
+  const Score({super.key, required this.score, required this.numberQuestions});
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +116,7 @@ class Score extends StatelessWidget {
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: Container(
-          decoration: const BoxDecoration(
-      
-          ),
+          decoration: const BoxDecoration(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -22,40 +125,35 @@ class Score extends StatelessWidget {
                 width: 310,
                 height: 300,
               ),
-//         const Text(
-//   "Congratulations",
-//   style: TextStyle(
-//     color: Colors.black,
-//     fontFamily: 'GentiumBookPlus',
-//     fontSize: 40,
-//     fontWeight: FontWeight.normal,
-//   ),  
-// ),
-  RichText(
-                text:
-                    TextSpan(style: TextStyle(color: Colors.black ,fontFamily: 'GentiumBookPlus' ,  fontSize: 30 ), children: [
-              const TextSpan(
-                text: "Congratulations ",
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'GentiumBookPlus',
+                    fontSize: 30,
+                  ),
+                  children: [
+                    const TextSpan(
+                      text: "Congratulations ",
+                    ),
+                    TextSpan(
+                      text: userName.text, 
+                      style: const TextStyle(
+                        color: Color(0xFF51829B),
+                        fontFamily: 'GentiumBookPlus',
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              TextSpan(
-                  text: userName.text,
-                  style: const TextStyle(
-                      color: Color(0xFF51829B),
-                      fontFamily: 'GentiumBookPlus',
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold)),
-            ])),
-
-    
-              const Text(
-                "9/10",
+              Text(
+                "$score/$numberQuestions",
                 style: TextStyle(
                   fontFamily: 'GentiumBookPlus',
-                    fontSize: 40,
-                    
+                  fontSize: 40,
                   color: Colors.black,
-                  
-                
                 ),
               ),
               SizedBox(
@@ -67,8 +165,8 @@ class Score extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                      Radius.circular(30),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(30),
                         ),
                       ),
                     ),
@@ -76,18 +174,19 @@ class Score extends StatelessWidget {
                   ),
                   child: const Text(
                     'Go To Agin Play',
-                    
-                    style: TextStyle(color: Colors.black ,
-                    fontFamily: 'GentiumBookPlus',
-                     fontSize: 24,),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: 'GentiumBookPlus',
+                      fontSize: 24,
+                    ),
                   ),
                   onPressed: () {
-
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute<void>(
-                          builder: (context) => const HomePage(),
-                        ));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
                   },
                 ),
               ),
